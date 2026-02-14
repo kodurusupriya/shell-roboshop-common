@@ -1,4 +1,5 @@
 #!/bin/bash
+
 source ./common.sh
 app_name=shipping
 
@@ -23,4 +24,3 @@ fi
 
 app_restart
 print_total_time
-
