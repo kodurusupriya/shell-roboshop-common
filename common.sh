@@ -18,7 +18,7 @@ MYSQL_HOST=mysql.supriya1999.online
 mkdir -p $LOGS_FOLDER
 echo -e "$(date "+%Y-%m-%d %H:%M:%S") |Script started executing at: $$(date)" | tee -a $LOGS_FILE
 
-USERID=$(id -u)
+
 check_root(){
     if [ $USERID -ne 0 ]; then
         echo -e "$R please run this script with root user access $N" | tee -a $LOGS_FILE
@@ -55,7 +55,7 @@ nodejs_setup(){
 
 }
 
-javasetup(){
+java_setup(){
 
     dnf install maven -y &>>$LOGS_FILE
     VALIDATE $? "Installing Maven"
