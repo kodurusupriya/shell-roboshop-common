@@ -3,8 +3,6 @@
 
 set -e # this will be checking for errors, if errors it will exit
 
-#!/bin/bash
-
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-roboshop"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
@@ -20,6 +18,7 @@ MYSQL_HOST=mysql.supriya1999.online
 mkdir -p $LOGS_FOLDER
 echo -e "$(date "+%Y-%m-%d %H:%M:%S") |Script started executing at: $$(date)" | tee -a $LOGS_FILE
 
+USERID=$(id -u)
 check_root(){
     if [ $USERID -ne 0 ]; then
         echo -e "$R please run this script with root user access $N" | tee -a $LOGS_FILE
