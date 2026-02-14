@@ -15,6 +15,8 @@ N="\e[0m"
 SCRIPT_DIR=$PWD
 START_TIME=$(date +%s)
 MONGODB_HOST=mongodb.supriya1999.online
+
+mkdir -p $LOGS_FOLDER
 echo -e "$(date "+%Y-%m-%d %H:%M:%S") |Script started executing at: $$(date)" | tee -a $LOGS_FILE
 
 check_root(){
@@ -23,7 +25,7 @@ check_root(){
         exit 1
     fi
  }
-mkdir -p $LOGS_FOLDER
+
 
 #by default shell will not execute,only executed when called
 VALIDATE(){
@@ -32,7 +34,7 @@ VALIDATE(){
             echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $2 ... $R failure $N" | tee -a $LOGS_FILE
             exit 1
         else 
-            echo -e "$2 ... $G success $N"  | tee -a $LOGS_FILE
+            echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $2 ... $G success $N"  | tee -a $LOGS_FILE
         fi     
 
 }
