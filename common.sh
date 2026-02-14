@@ -17,7 +17,7 @@ echo -e "$(date "+%Y-%m-%d %H:%M:%S") |Script started executing at: $$(date)" | 
 
 check_root(){
     if [ $USERID -ne 0 ]; then
-        echo -e "$R please run this script with root user access $N"  | tee -a $LOGS_FILE
+        echo -e "$R please run this script with root user access $N" | tee -a $LOGS_FILE
         exit 1
     fi
  }
